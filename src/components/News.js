@@ -3,7 +3,7 @@ import Newsitems from './Newsitems'
 import Spinner from './Spinner'
 import propTypes from 'prop-types'
 import InfiniteScroll from 'react-infinite-scroll-component'
-
+import './News.css'
 
 const News = (props) => {
     const [articles, setArticles] = useState([])
@@ -116,7 +116,7 @@ const News = (props) => {
 
     return (
         <>
-            <h2 className="text-center " style={{margin:"20px 0px",marginTop:"90px"}}>NewsWave - Top headlines</h2>
+            <h2 className="text-center " style={{margin:"20px 0px",marginTop:"120px"}}>NewsWave - Top headlines</h2>
             {loading && <Spinner />}
             <InfiniteScroll
                 dataLength={articles.length}
@@ -125,7 +125,7 @@ const News = (props) => {
                 hasMore={articles.length !== totalResults}
                 loader={<Spinner />}
             >
-                <div className='container my-3'>
+                <div className='container boxx my-3'>
                     <div className="row">
                         {articles.map((element) => {
                             return <div className="col-md-4" key={element.url}>
